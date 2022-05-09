@@ -14,7 +14,7 @@ public class TherapistTest {
     @Test
     void TestCountQuestion() {
         Therapist therapist = new Therapist();
-        List<String> data = therapist.getData();
+        List<Message> data = therapist.getData();
         assertEquals(data.size(), 15);
     }
 }

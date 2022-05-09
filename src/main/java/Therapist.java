@@ -3,5 +3,5 @@ import java.util.List;
 
 public class Therapist {
 
-public List<String> getData(){return new ArrayList<String>();}
+public List<Message> getData(){return new ArrayList<Message>();}
 }
