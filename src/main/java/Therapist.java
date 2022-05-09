@@ -23,7 +23,13 @@ public class Therapist {
     }
 
     public Message getStartMessage()
-    {return new Message();}
+    {System.out.println("Добро пожаловать в систему \"ЭДЕКТРОННЫЙ ТЕРАПЕВТ\"" +
+            "\nВаму будет задан ряд вопросов," +
+            "\n ваша задача отвечать \"yes\" или \"no\".\n\nПОЕХАЛИ\n\n");
+        return questions.get(0);
+    }
+
+
     public Message getMessageByAnswer(int id, String ans)
     {
         Message mes = getMessageById(id);
