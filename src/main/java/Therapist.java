@@ -9,6 +9,7 @@ public class Therapist {
 
     Therapist(){ readDate();}
 
+
     public Message getMessageById(int id)
     {
         if (questions==null) {
@@ -20,11 +21,16 @@ public class Therapist {
             return b;
         }
     }
+
+    public Message getStartMessage()
+    {return new Message();}
     public Message getMessageByAnswer(int id, String ans)
     {
         Message mes = getMessageById(id);
             return getMessageById(ans.equals("yes")? mes.ansYes: mes.ansNo);
     }
+
+
     private void readDate()
     {
         Message mes;

@@ -81,4 +81,12 @@ public class TherapistTest {
         quest = therapist.getMessageByAnswer(quest.number, "no");
         assertEquals(quest.text, "РЕЗУЛЬТАТ: Ищи проблему в эндокринной системе");
     }
+
+    @Test
+    void TestGetStartQuest() {
+        Therapist therapist = new Therapist();
+        Message quest1 = therapist.getMessageById(1);
+        Message quest2 = therapist.getStartMessage();
+        assertEquals(quest1.text, quest2.text);
+    }
 }
