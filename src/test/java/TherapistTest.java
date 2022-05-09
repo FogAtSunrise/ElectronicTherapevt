@@ -49,4 +49,36 @@ public class TherapistTest {
         quest = therapist.getMessageByAnswer(number, "no");
         assertEquals(quest.text, "Вас беспокоит нарушение аппетита?");
     }
+
+    @Test
+    void TestGetMessagesAfterAns1() {
+        Therapist therapist = new Therapist();
+        Message quest = therapist.getMessageById(1);
+        assertEquals(quest.text, "Вас беспокоят головные боли?");
+
+        quest = therapist.getMessageByAnswer(quest.number, "no");
+        assertEquals(quest.text, "Вас беспокоят боли в груди?");
+
+        quest = therapist.getMessageByAnswer(quest.number, "no");
+        assertEquals(quest.text, "Вас беспокоит нарушение аппетита?");
+
+        quest = therapist.getMessageByAnswer(quest.number, "no");
+        assertEquals(quest.text, "РЕКОМЕНДАЦИИ:Все ваши проблемы в голове, поспите и покушайте нормально");
+    }
+
+    @Test
+    void TestGetMessagesAfterAns2() {
+        Therapist therapist = new Therapist();
+        Message quest = therapist.getMessageById(1);
+        assertEquals(quest.text, "Вас беспокоят головные боли?");
+
+        quest = therapist.getMessageByAnswer(quest.number, "yes");
+        assertEquals(quest.text, "Бывали ли у вас обмороки или судороги?");
+
+        quest = therapist.getMessageByAnswer(quest.number, "no");
+        assertEquals(quest.text, "Бывают ли у вас жажда и сухость во рту?");
+
+        quest = therapist.getMessageByAnswer(quest.number, "no");
+        assertEquals(quest.text, "РЕЗУЛЬТАТ: Ищи проблему в эндокринной системе");
+    }
 }
