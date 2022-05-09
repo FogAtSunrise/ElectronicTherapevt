@@ -9,6 +9,11 @@ public class Therapist {
 
     Therapist(){ readDate();}
 
+    public Message getMessageById(int id)
+    {
+        return new Message();
+    }
+
     private void readDate()
     {
         Message mes;
