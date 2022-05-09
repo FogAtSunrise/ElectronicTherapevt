@@ -89,4 +89,24 @@ public class TherapistTest {
         Message quest2 = therapist.getStartMessage();
         assertEquals(quest1.text, quest2.text);
     }
+
+    @Test
+    void TestError1() {
+        Therapist therapist = new Therapist();
+        Message quest = therapist.getMessageById(100);
+        assertNotNull(quest);
+    }
+
+    @Test
+    void TestError2() {
+        Therapist therapist = new Therapist();
+        Message quest = therapist.getMessageById(15);
+        assertEquals(quest.text, "РЕЗУЛЬТАТ: Ищи проблему в эндокринной системе");
+        int number = quest.number;
+        quest = therapist.getMessageByAnswer(number, "yes");
+        assertNotNull(quest);
+        quest = therapist.getMessageByAnswer(number, "no");
+        assertNotNull(quest);
+
+    }
 }
