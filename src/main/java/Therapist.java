@@ -20,7 +20,10 @@ public class Therapist {
             return b;
         }
     }
-
+    public Message getMessageByAnswer(int id, String ans)
+    {
+        return new Message();
+    }
     private void readDate()
     {
         Message mes;
