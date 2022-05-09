@@ -28,8 +28,8 @@ public class Therapist {
 
     public Message getStartMessage()
     {System.out.println("Добро пожаловать в систему \"ЭДЕКТРОННЫЙ ТЕРАПЕВТ\"" +
-            "\nВаму будет задан ряд вопросов," +
-            "\n ваша задача отвечать \"yes\" или \"no\".\n\nПОЕХАЛИ\n\n");
+            "\nВам будет задан ряд вопросов." +
+            "\nВаша задача отвечать \"yes\" или \"no\".\n\nПОЕХАЛИ\n\n");
         return questions.get(0);
     }
 
