@@ -17,7 +17,11 @@ public class Therapist {
         }
         else
         {
-            Message b = questions.stream().filter(x-> x.number==id).findFirst().get();
+            Message b;
+            try
+            { b = questions.stream().filter(x-> x.number==id).findFirst().get();}
+                catch(Exception e)
+            {return new Message(0, "Error! Отсутствие данных" );}
             return b;
         }
     }
@@ -33,7 +37,9 @@ public class Therapist {
     public Message getMessageByAnswer(int id, String ans)
     {
         Message mes = getMessageById(id);
+        if (mes.IsQuestion)
             return getMessageById(ans.equals("yes")? mes.ansYes: mes.ansNo);
+        else  return new Message(0, "Error! Попытка продолжить опрос после завершения" );
     }
 
 
