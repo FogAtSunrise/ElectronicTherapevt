@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TherapistTest {
@@ -6,5 +9,12 @@ public class TherapistTest {
     void ClassTherapistCreationTest() {
         Therapist therapist = new Therapist();
         assertNotNull(therapist);
+    }
+
+    @Test
+    void TestCountQuestion() {
+        Therapist therapist = new Therapist();
+        List<String> data = therapist.getData();
+        assertEquals(data.size(), 15);
     }
 }
