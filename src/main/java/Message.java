@@ -20,4 +20,6 @@ public class Message {
         number=num;
         text = str;
     }
+
+    Message(){}
 }
