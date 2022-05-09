@@ -22,7 +22,8 @@ public class Therapist {
     }
     public Message getMessageByAnswer(int id, String ans)
     {
-        return new Message();
+        Message mes = getMessageById(id);
+            return getMessageById(ans.equals("yes")? mes.ansYes: mes.ansNo);
     }
     private void readDate()
     {
