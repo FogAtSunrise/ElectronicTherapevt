@@ -11,7 +11,14 @@ public class Therapist {
 
     public Message getMessageById(int id)
     {
-        return new Message();
+        if (questions==null) {
+            return new Message(0, "Error! Отсутствие данных" );
+        }
+        else
+        {
+            Message b = questions.stream().filter(x-> x.number==id).findFirst().get();
+            return b;
+        }
     }
 
     private void readDate()
